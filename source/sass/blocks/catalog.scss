@@ -1,6 +1,16 @@
 .catalog {
-  padding-top: 95px;
+  padding-top: 86px;
   padding-bottom: 120px;
+
+  @include vp-1023 {
+    padding-bottom: 100px;
+    padding-top: 111px;
+  }
+
+  @include vp-767 {
+    padding-top: 55px;
+    padding-bottom: 64px;
+  }
 }
 
 .catalog__title {
@@ -13,6 +23,17 @@
   font-size: 28px;
   line-height: 42px;
   color: $color-tangaroa;
+
+  @include vp-1023 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 34px;
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
 
 .catalog__list {
@@ -28,11 +49,14 @@
 
   @include vp-1023 {
     grid-template-columns: repeat(2, 1fr);
+    margin: 0 20px;
   }
 
   @include vp-767 {
     grid-template-columns: 1fr;
     justify-items: center;
+    margin: 0;
+    padding: 0 8px;
   }
 }
 
@@ -137,6 +161,9 @@
   position: absolute;
   bottom: 0;
   left: 30px;
+  margin: 0;
+  margin-bottom: 22px;
+  padding: 0;
 
   font-weight: 500;
   font-size: 18px;
@@ -145,5 +172,17 @@
 
   @include vp-1023 {
     left: 35px;
+    margin-bottom: 26px;
+  }
+
+  @include vp-767 {
+    left: 25px;
+    margin-bottom: 19px;
+  }
+}
+
+.catalog__cruises-image {
+  @include vp-767 {
+    width: 270px;
   }
 }
