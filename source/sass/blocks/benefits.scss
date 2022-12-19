@@ -162,6 +162,12 @@
   }
 }
 
+.benefits__item-title span {
+  @include vp-1023 {
+    display: block;
+  }
+}
+
 .benefits__item:nth-of-type(3n) .benefits__item-title {
   @include vp-1023 {
     margin-bottom: 18px;

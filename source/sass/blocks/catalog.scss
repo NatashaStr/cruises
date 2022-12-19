@@ -64,6 +64,27 @@
   position: relative;
 }
 
+.catalog__item:has(.catalog__cruises-button:focus) {
+  .catalog__cruises-intro h3 {
+    z-index: -1;
+  }
+
+  .catalog__cruises-content {
+    top: 0;
+    left: 0;
+  }
+
+  .catalog__cruises-img {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .catalog__cruises-button {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 .catalog__cruises-content {
   position: absolute;
   top: 0;
@@ -127,6 +148,16 @@
   line-height: 21px;
   color: $color-tangaroa;
   background-color: $color-alice-blue;
+
+  @include hover {
+    color: $color-alice-blue;
+    background-color: $color-tangaroa;
+  }
+
+  &:focus {
+    outline: 2px solid tomato;
+    outline-offset: -2px;
+  }
 }
 
 .catalog__cruises-button:focus-within {
