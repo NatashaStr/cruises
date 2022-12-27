@@ -787,9 +787,13 @@ button,
 .benefits {
   padding-top: 111px;
   padding-bottom: 120px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(227, 236, 246, 0.9)), to(rgba(227, 236, 246, 0.9))), url("../img/bg-benefits.jpg");
-  background-image: -o-linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits.jpg");
-  background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(227, 236, 246, 0.9)), to(rgba(227, 236, 246, 0.9))), url("../img/bg-benefits.webp");
+  background-image: -o-linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits.webp");
+  background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits.webp");
+  background-color: rgba(227, 236, 246, 0.9);
+  background-size: cover;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
 }
 
 .benefits__title {
@@ -1007,8 +1011,8 @@ button,
 .catalog__cruises-img {
   width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
+  -o-object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 260/386;
 }
 
@@ -1029,6 +1033,10 @@ button,
   color: #f9fbfd;
 }
 
+.contacts {
+  margin-bottom: 0;
+}
+
 .contacts__wrapper {
   display: -ms-grid;
   display: grid;
@@ -1046,6 +1054,7 @@ button,
 
 .contacts__text {
   padding: 0;
+  padding-top: 20px;
   margin: 0;
   margin-bottom: 30px;
   font-weight: 500;
@@ -1066,6 +1075,11 @@ button,
 
 .contacts__address {
   margin-bottom: 22px;
+}
+
+.contacts__phone {
+  display: block;
+  padding-bottom: 20px;
 }
 
 .contacts__inner-wrapper svg {
@@ -1101,6 +1115,7 @@ button,
   font-weight: 600;
   font-size: 28px;
   line-height: 42px;
+  color: #011c40;
 }
 
 .description__text {
@@ -1110,6 +1125,7 @@ button,
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  color: #011c40;
 }
 
 .footer {
@@ -1180,12 +1196,15 @@ button,
   margin: 0;
   margin-left: auto;
   padding: 0;
+  padding-top: 7px;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  min-width: 107px;
+  max-width: 135px;
 }
 
 .footer__social-item {
@@ -1216,9 +1235,11 @@ button,
   -ms-flex-align: center;
   align-items: center;
   min-height: 555px;
-  background-image: url("../img/bg-form-desktop.jpg");
+  background-image: url("../img/bg-form-desktop.webp");
+  background-color: rgba(227, 236, 246, 0.9);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 65%;
 }
 
 .form__wrapper {
@@ -1230,6 +1251,10 @@ button,
   -ms-flex-align: center;
   align-items: center;
   padding: 0 60px;
+}
+
+.form__wrapper-inner {
+  padding-top: 10px;
 }
 
 .form__title {
@@ -1246,6 +1271,7 @@ button,
   max-width: 350px;
   margin: 0;
   padding: 0;
+  padding-bottom: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -1264,7 +1290,6 @@ button,
   flex-direction: column;
   max-width: 403px;
   padding: 50px;
-  padding-top: 40px;
   background-color: #011c40;
   -webkit-box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
   box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
@@ -1273,7 +1298,8 @@ button,
 .form__user-text {
   padding: 0;
   margin: 0;
-  margin-bottom: 30px;
+  margin-top: -10px;
+  margin-bottom: 25px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1284,7 +1310,7 @@ button,
   width: 100%;
   margin: 0;
   padding: 11px 0 11px 16px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   background-color: #f9fbfd;
   border: none;
 }
@@ -1335,16 +1361,25 @@ button,
 }
 
 .form__user input[type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   padding: 0;
-  margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
 }
 
 .form__user input[type=email] {
   margin-bottom: 0;
+}
+
+.form__definition {
+  margin-top: 20px;
 }
 
 .form__agreement {
@@ -1378,7 +1413,10 @@ input[type=checkbox]:checked ~ .form__agreement::after {
   background-image: url("../img/svg/tick-form.svg");
 }
 
-input[type=checkbox]:hover ~ .form__agreement::before,
+input[type=checkbox]:hover ~ .form__agreement::before {
+  background-color: rgba(51, 182, 255, 0.6);
+}
+
 input[type=checkbox]:focus ~ .form__agreement::before {
   background-color: rgba(51, 182, 255, 0.6);
   outline: 2px solid #000000;
@@ -1413,9 +1451,9 @@ input[type=checkbox]:focus ~ .form__agreement::before {
 }
 
 .header {
-  margin-top: 35px;
-  margin-bottom: -80px;
-  z-index: 2;
+  position: absolute;
+  top: 0.8%;
+  width: 100%;
 }
 
 .header__wrapper {
@@ -1499,9 +1537,10 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   justify-content: center;
   margin-bottom: 120px;
   background-color: #011c40;
-  background-image: url("../img/bg-main.jpg");
+  background-image: url("../img/bg-main.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 65%;
 }
 
 .intro__wrapper {
@@ -1512,6 +1551,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
+  padding-top: 80px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 700;
   font-size: 54px;
@@ -1523,6 +1563,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
 .intro__text {
   margin: 0;
   padding: 0;
+  padding-bottom: 80px;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -1640,7 +1681,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .catalog {
-    padding-bottom: 100px;
+    padding-bottom: 96px;
     padding-top: 111px;
   }
 
@@ -1655,15 +1696,22 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     margin: 0 20px;
   }
 
+  .catalog__cruises-content {
+    padding: 28px 35px 35px 35px;
+  }
+
+  .catalog__cruises-img {
+    aspect-ratio: 309/386;
+  }
+
   .catalog__cruises-intro {
     min-height: 386px;
-    max-height: 386px;
     overflow: hidden;
   }
 
   .catalog__cruises-intro h3 {
     left: 35px;
-    margin-bottom: 26px;
+    margin-bottom: 29px;
   }
 
   .contacts__wrapper {
@@ -1684,7 +1732,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .contacts__text {
-    margin-bottom: 30px;
+    margin-bottom: 27px;
   }
 
   .contacts__address {
@@ -1746,6 +1794,11 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     line-height: 15px;
   }
 
+  .footer__social-list {
+    padding: 0;
+    min-width: 88px;
+  }
+
   .footer__social-item {
     margin-right: 23px;
   }
@@ -1779,7 +1832,8 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .form__wrapper-inner {
-    margin-bottom: 52px;
+    margin-bottom: 36px;
+    padding-top: 0;
   }
 
   .form__title {
@@ -1799,16 +1853,18 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   .form__user {
     -ms-grid-column-align: center;
     justify-self: center;
-    padding-top: 43px;
   }
 
   .form__user input {
     margin-bottom: 22px;
   }
 
+  .form__definition {
+    margin-top: 26px;
+  }
+
   .header {
-    margin-top: 25px;
-    margin-bottom: -55px;
+    top: 0.5%;
   }
 
   .header__wrapper {
@@ -1830,7 +1886,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .intro {
-    margin-bottom: 92px;
+    margin-bottom: 89px;
   }
 
   .intro__wrapper {
@@ -1838,12 +1894,14 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .intro__title {
+    padding-top: 70px;
     margin-top: -10px;
     font-size: 50px;
     line-height: 61px;
   }
 
   .intro__text {
+    padding-bottom: 78px;
     font-size: 18px;
     line-height: 22px;
   }
@@ -1921,18 +1979,41 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     padding: 0 8px;
   }
 
+  .catalog__item {
+    width: 100%;
+  }
+
+  .catalog__cruises-content {
+    padding: 28px 25px 35px 25px;
+  }
+
+  .catalog__cruises-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    aspect-ratio: 270/386;
+  }
+
   .catalog__cruises-intro {
-    min-width: 270px;
-    max-width: 270px;
+    width: 100%;
+    aspect-ratio: 270/386;
   }
 
   .catalog__cruises-intro h3 {
+    z-index: 10;
     left: 25px;
     margin-bottom: 19px;
   }
 
   .catalog__cruises-image {
-    width: 270px;
+    width: 100%;
+  }
+
+  .contacts {
+    margin-bottom: 10px;
   }
 
   .contacts__wrapper {
@@ -1945,6 +2026,10 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
+  }
+
+  .contacts__map {
+    max-width: 100%;
   }
 
   .description__wrapper {
@@ -2003,7 +2088,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
 
   .form {
     min-height: 760px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .form__wrapper {
@@ -2012,7 +2097,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .form__wrapper-inner {
-    margin-bottom: 33px;
+    margin-bottom: 35px;
   }
 
   .form__title {
@@ -2025,21 +2110,37 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     font-size: 16px;
     line-height: 22px;
     margin: 0 10px;
+    padding: 0;
   }
 
   .form__user {
-    max-width: 290px;
-    padding: 35px 30px 40px;
+    max-width: 100%;
+    padding: 45px 30px 45px;
   }
 
   .form__user-text {
     font-size: 18px;
     line-height: 25px;
     text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form__definition {
+    margin-top: 20px;
+    max-width: 175px;
   }
 
   .form__agreement {
-    margin-bottom: 25px;
+    margin-bottom: 26px;
+    padding-left: 27px;
+  }
+
+  .form__agreement::before {
+    top: 3px;
+  }
+
+  input[type=checkbox]:checked ~ .form__agreement::after {
+    top: 8px;
   }
 
   .form__user label:last-child {
@@ -2047,8 +2148,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .header {
-    margin-top: 25px;
-    margin-bottom: -50px;
+    top: 0.3%;
   }
 
   .header__wrapper {
@@ -2090,9 +2190,10 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   .header.header__menu--opened {
     min-width: 285px;
     position: absolute;
-    top: -36px;
+    top: 0;
     height: 100vh;
     right: 0;
+    left: 35px;
     background-color: #f9fbfd;
   }
 
@@ -2101,17 +2202,32 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin-top: 10px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
   }
 
   .header__menu--opened .header__image {
     margin-top: 20px;
     margin-bottom: 39px;
+    z-index: 2;
+  }
+
+  .header__menu--opened .header__nav {
+    position: absolute;
+    top: 0;
+    left: -35px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 24, 64, 0.7);
   }
 
   .header__menu--opened .header__nav-list {
     display: block;
-    margin-left: -19px;
+    margin-left: 35px;
+    height: 102vh;
+    padding: 85px 25px;
+    background-color: #f9fbfd;
   }
 
   .header__menu--opened .header__nav-item {
@@ -2119,7 +2235,10 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .header__menu--opened .header__link {
-    margin-right: auto;
+    position: absolute;
+    top: 0;
+    left: 17px;
+    z-index: 2;
   }
 
   .header__menu--opened .header__link path {
@@ -2134,8 +2253,8 @@ input[type=checkbox]:focus ~ .form__agreement::before {
 
   .header__menu--opened .header__button {
     position: absolute;
-    top: 46px;
-    right: 6px;
+    top: 36px;
+    right: 41px;
     background-color: transparent;
   }
 
@@ -2160,6 +2279,49 @@ input[type=checkbox]:focus ~ .form__agreement::before {
     display: none;
   }
 
+  .header__menu--no-js {
+    position: static;
+  }
+
+  .header.header__menu--no-js {
+    background-color: #f9fbfd;
+  }
+
+  .header__menu--no-js .header__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+  }
+
+  .header__menu--no-js .header__image {
+    margin-top: 20px;
+    margin-bottom: 39px;
+  }
+
+  .header__menu--no-js .header__nav-list {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .header__menu--no-js .header__nav-item {
+    margin-bottom: 26px;
+    margin-right: 0;
+  }
+
+  .header__menu--no-js .header__link path {
+    fill: #011c40;
+  }
+
+  .header__menu--no-js .header__nav-link {
+    font-size: 18px;
+    line-height: 22px;
+    color: #011c40;
+  }
+
   .intro {
     min-height: 500px;
     margin-bottom: 65px;
@@ -2170,6 +2332,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .intro__title {
+    margin-top: 0;
     font-size: 36px;
     line-height: 45px;
   }
@@ -2186,8 +2349,12 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   }
 
   .catalog__cruises-button:hover:not(.focus-visible) {
-    color: #f9fbfd;
-    background-color: #011c40;
+    outline: 2px solid tomato;
+    outline-offset: -2px;
+  }
+
+  .contacts__phone:hover:not(.focus-visible) {
+    font-weight: 700;
   }
 
   .footer__nav-link:hover:not(.focus-visible)::before {
@@ -2223,16 +2390,16 @@ input[type=checkbox]:focus ~ .form__agreement::before {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .benefits {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(227, 236, 246, 0.9)), to(rgba(227, 236, 246, 0.9))), url("../img/bg-benefits@2x.jpg");
-    background-image: -o-linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits@2x.jpg");
-    background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits@2x.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(227, 236, 246, 0.9)), to(rgba(227, 236, 246, 0.9))), url("../img/bg-benefits@2x.webp");
+    background-image: -o-linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits@2x.webp");
+    background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits@2x.webp");
   }
 
   .form {
-    background-image: url("../img/bg-form-desktop@2x.jpg");
+    background-image: url("../img/bg-form-desktop@2x.webp");
   }
 
   .intro {
-    background-image: url("../img/bg-main@2x.jpg");
+    background-image: url("../img/bg-main@2x.webp");
   }
 }
