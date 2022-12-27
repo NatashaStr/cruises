@@ -2,10 +2,14 @@
   padding-top: 111px;
   padding-bottom: 120px;
 
-  background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits.jpg");
+  background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits.webp");
+  background-color: rgba(227, 236, 246, 0.9);
+  background-size: cover;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
 
   @include retina {
-    background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits@2x.jpg");
+    background-image: linear-gradient(rgba(227, 236, 246, 0.9), rgba(227, 236, 246, 0.9)), url("../img/bg-benefits@2x.webp");
   }
 
   @include vp-1023 {

@@ -1,12 +1,17 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-import './modules/burger-menu';
+import {initBurger, breakpointChecker, burgerBtn} from './modules/burger-menu';
 import {initMap} from './modules/map';
 
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
   initMap();
+
+  if (burgerBtn) {
+    initBurger();
+    breakpointChecker();
+  }
   // Utils
   // ---------------------------------
 

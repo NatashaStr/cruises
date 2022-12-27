@@ -3,7 +3,7 @@
   padding-bottom: 120px;
 
   @include vp-1023 {
-    padding-bottom: 100px;
+    padding-bottom: 96px;
     padding-top: 111px;
   }
 
@@ -62,6 +62,10 @@
 
 .catalog__item {
   position: relative;
+
+  @include vp-767 {
+    width: 100%;
+  }
 }
 
 .catalog__item:has(.catalog__cruises-button:focus) {
@@ -100,6 +104,14 @@
 
   background-color: $color-tangaroa;
   box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
+
+  @include vp-1023 {
+    padding: 28px 35px 35px 35px;
+  }
+
+  @include vp-767 {
+    padding: 28px 25px 35px 25px;
+  }
 }
 
 .catalog__item:hover .catalog__cruises-content {
@@ -150,8 +162,8 @@
   background-color: $color-alice-blue;
 
   @include hover {
-    color: $color-alice-blue;
-    background-color: $color-tangaroa;
+    outline: 2px solid tomato;
+    outline-offset: -2px;
   }
 
   &:focus {
@@ -165,12 +177,25 @@
   border: 1px solid $color-torch-red;
 }
 
-
 .catalog__cruises-img {
   width: 100%;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   aspect-ratio: 260 / 386;
+
+  @include vp-1023 {
+    aspect-ratio: 309 / 386;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    aspect-ratio: 270 / 386;
+  }
 }
 
 .catalog__cruises-intro {
@@ -178,13 +203,12 @@
 
   @include vp-1023 {
     min-height: 386px;
-    max-height: 386px;
     overflow: hidden;
   }
 
   @include vp-767 {
-    min-width: 270px;
-    max-width: 270px;
+    width: 100%;
+    aspect-ratio: 270/386;
   }
 }
 
@@ -203,10 +227,11 @@
 
   @include vp-1023 {
     left: 35px;
-    margin-bottom: 26px;
+    margin-bottom: 29px;
   }
 
   @include vp-767 {
+    z-index: 10;
     left: 25px;
     margin-bottom: 19px;
   }
@@ -214,6 +239,6 @@
 
 .catalog__cruises-image {
   @include vp-767 {
-    width: 270px;
+    width: 100%;
   }
 }

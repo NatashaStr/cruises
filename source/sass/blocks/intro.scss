@@ -6,16 +6,17 @@
   margin-bottom: 120px;
 
   background-color: $color-tangaroa;
-  background-image: url("../img/bg-main.jpg");
+  background-image: url("../img/bg-main.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 65%;
 
   @include retina {
-    background-image: url("../img/bg-main@2x.jpg");
+    background-image: url("../img/bg-main@2x.webp");
   }
 
   @include vp-1023 {
-    margin-bottom: 92px;
+    margin-bottom: 89px;
   }
 
   @include vp-767 {
@@ -40,6 +41,7 @@
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
+  padding-top: 80px;
 
   font-family: $ff-default;
   font-weight: 700;
@@ -50,12 +52,14 @@
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
+    padding-top: 70px;
     margin-top: -10px;
     font-size: 50px;
     line-height: 61px;
   }
 
   @include vp-767 {
+    margin-top: 0;
     font-size: 36px;
     line-height: 45px;
   }
@@ -64,6 +68,7 @@
 .intro__text {
   margin: 0;
   padding: 0;
+  padding-bottom: 80px;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -71,6 +76,7 @@
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
+    padding-bottom: 78px;
     font-size: 18px;
     line-height: 22px;
   }
