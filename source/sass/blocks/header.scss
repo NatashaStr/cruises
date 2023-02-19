@@ -176,7 +176,7 @@
   @include vp-767 {
     display: block;
     margin-left: 35px;
-    height: 102vh;
+    min-height: 102vh;
     padding: 85px 25px;
     background-color: #f9fbfd;
   }
