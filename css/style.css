@@ -2089,6 +2089,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   .form {
     min-height: 760px;
     margin-bottom: 10px;
+    background-image: url("../img/bg-form-mobile.webp");
   }
 
   .form__wrapper {
@@ -2325,6 +2326,7 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   .intro {
     min-height: 500px;
     margin-bottom: 65px;
+    background-image: url("../img/bg-main-mobile.webp");
   }
 
   .intro__wrapper {
@@ -2340,6 +2342,16 @@ input[type=checkbox]:focus ~ .form__agreement::before {
   .intro__text {
     font-size: 16px;
     padding-right: 60px;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .form {
+    background-image: url("../img/bg-form-mobile@2x.webp");
+  }
+
+  .intro {
+    background-image: url("../img/bg-main-mobile@2x.webp");
   }
 }
 
